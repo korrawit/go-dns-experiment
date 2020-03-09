@@ -33,6 +33,7 @@ func main() {
 	req = req.WithContext(httptrace.WithClientTrace(req.Context(), trace))
 
 	client := http.DefaultClient
+	// _, err := http.DefaultTransport.RoundTrip(req)
 	_, err := client.Do(req)
 	if err != nil {
 		log.Fatal(err)
